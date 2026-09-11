@@ -1,0 +1,6 @@
+{
+  "name": "Multimodal Stress Monitoring System",
+  "description": "Multimodal Stress Monitoring System Using EEG and GSR Biomarkers: Signal Processing and AI-Based Approaches",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
