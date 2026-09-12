@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --bg-base: #fcfaff;
+    --text-base: #0f172a;
+  }
+  
+  .dark {
+    --bg-base: #0b0f17;
+    --text-base: #f1f5f9;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-base);
+    color: var(--text-base);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* 2026 Glassmorphism Tier System - White / Midnight Graphite with Gradient Purple */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(192, 132, 252, 0.3);
+  box-shadow: 0 4px 20px -2px rgba(126, 34, 206, 0.08), 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+.dark .glass-nav {
+  background: rgba(11, 15, 23, 0.82);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.6), 0 0 16px -3px rgba(147, 51, 234, 0.18);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(250, 245, 255, 0.88) 100%);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(192, 132, 252, 0.22);
+  box-shadow: 0 10px 32px -4px rgba(126, 34, 206, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+}
+
+.dark .glass-card {
+  background: linear-gradient(135deg, rgba(16, 21, 33, 0.78) 0%, rgba(12, 16, 26, 0.85) 100%);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(168, 85, 247, 0.24);
+  box-shadow: 0 10px 32px -4px rgba(0, 0, 0, 0.6), 0 0 20px -2px rgba(126, 34, 206, 0.15);
+}
+
+.glass-interactive {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(246, 240, 255, 0.92) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(168, 85, 247, 0.32);
+  box-shadow: 0 12px 36px -4px rgba(126, 34, 206, 0.12), inset 0 1px 2px 0 rgba(255, 255, 255, 0.95);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .glass-interactive {
+  background: linear-gradient(135deg, rgba(20, 26, 42, 0.82) 0%, rgba(14, 18, 30, 0.88) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(168, 85, 247, 0.32);
+  box-shadow: 0 12px 36px -4px rgba(0, 0, 0, 0.55), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-interactive:hover {
+  border-color: rgba(147, 51, 234, 0.55);
+  box-shadow: 0 16px 44px -4px rgba(126, 34, 206, 0.18), 0 0 20px -2px rgba(168, 85, 247, 0.25);
+}
+
+.dark .glass-interactive:hover {
+  border-color: rgba(192, 132, 252, 0.6);
+  box-shadow: 0 16px 44px -4px rgba(0, 0, 0, 0.7), 0 0 24px -2px rgba(168, 85, 247, 0.35);
+}
+
+.glass-critical {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(243, 232, 255, 0.94) 100%);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(147, 51, 234, 0.4);
+  box-shadow: 0 16px 48px -4px rgba(126, 34, 206, 0.16), 0 0 24px -2px rgba(147, 51, 234, 0.15);
+}
+
+.dark .glass-critical {
+  background: linear-gradient(135deg, rgba(28, 20, 44, 0.85) 0%, rgba(17, 13, 30, 0.92) 100%);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(192, 132, 252, 0.45);
+  box-shadow: 0 16px 48px -4px rgba(0, 0, 0, 0.65), 0 0 28px -2px rgba(147, 51, 234, 0.3);
+}
+
+/* Gemini Spectrum RGB Glow Utility - Vibrant Purple Gradient */
+.gemini-glow-border {
+  position: relative;
+}
+.gemini-glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(120deg, #9333ea, #6366f1, #c026d3, #a855f7, #4f46e5);
+  background-size: 300% 300%;
+  animation: geminiDrift 6s linear infinite;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes geminiDrift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Subtle 3D Glass Title styling for Light Mode */
+.text-3d-title {
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9),
+               0 2px 6px rgba(126, 34, 206, 0.15),
+               0 6px 14px rgba(91, 33, 182, 0.1);
+}
+
+.mono-metric {
+  font-family: var(--font-mono);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(147, 51, 234, 0.45);
+}

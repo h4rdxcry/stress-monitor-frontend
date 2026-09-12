@@ -1,0 +1,30 @@
+name: biomonitor
+description: "AI-Powered Stress Monitoring App Using Multimodal EEG and GSR Biomarkers"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  tflite_flutter: ^0.10.4
+  image_picker: ^1.1.2
+  file_picker: ^8.1.2
+  path_provider: ^2.1.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/models/Stress_V4_Final.tflite
+    - assets/demo/
